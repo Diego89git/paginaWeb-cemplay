@@ -1,0 +1,45 @@
+.content{
+    background-color: aliceblue;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border: 1px solid rgb(180, 178, 199);
+    flex-wrap: wrap;
+     
+}
+.logo{
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    width: 55vw;
+    height: 69vh;
+    
+}
+.texto{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    flex-direction:column ;
+    justify-content: center;
+}
+
+.texto h1{
+    margin: 15px 5px;
+    font-size: 50px;
+}
+.texto span{
+    text-align: center;
+    margin: 5px 55px;
+    font-size: 20px;
+}
+.texto button{
+    margin: 15px 5px;
+    height: 10%;
+    width: 50%;
+    border-radius: 5px;
+    background-color: var(--color-menu);
+    color: white;
+    font-size: 25px;
+}

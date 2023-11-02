@@ -1,0 +1,26 @@
+.content {
+
+    background-color: hsl(127, 19%, 91%); 
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.categoria {
+    width: 15%;       /* 20% del ancho del componente principal */
+    height: 30%;      /* 30% del alto del componente principal */
+    margin: 5px 5px;
+    height: 30%;
+    width: 15%;
+    padding: 25px;     /* Margen entre subcomponentes para dar espacio */
+  }
+  @media (max-width: 945px) {
+   
+    .categoria {
+        width: 30%;       /* 30% del alto del componente principal */
+       
+      }
+   
+  }

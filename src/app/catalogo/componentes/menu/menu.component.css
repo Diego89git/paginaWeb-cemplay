@@ -1,0 +1,47 @@
+.content {
+    background-color: var(--color-menu);
+    color: white;
+}
+
+.content ul{
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    
+}
+.content ul li{
+    margin: 0 10px;
+    padding: 10px 7px;
+}
+
+.seleccionado{
+    position: relative;
+    background-color:hsl(127, 19%, 91%);
+    color: var(--color-menu);
+
+}
+.contenedor{
+    margin: 0 10px;
+}
+
+@media (max-width: 950px) {
+    .content {
+        display: block;
+        height: 25%;
+        justify-content: center;
+    }
+    .content ul{
+        flex-direction: column;
+        gap: 5px;
+        width: 100%;
+        list-style: none;
+    }
+    
+
+}
+
+@media (max-width: 345px) {
+   
+
+   
+}

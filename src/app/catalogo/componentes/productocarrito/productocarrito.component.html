@@ -1,0 +1,24 @@
+<div class="content">
+    
+    <div class="body-card">
+        <div class="card_3 card-1_3">
+            <img src="{{data.RutaImagen}}" alt="">
+        </div>
+        <div class="card_3 card-2_3">
+            <p>{{data.Descripcion}}</p>
+        </div>
+        <div class="card_3 card-3_3">
+            <div class="precio">
+                <h1>{{data.Precio_2 | number:'1.2-2' }}</h1>
+            </div>
+            <div class="ctrl-cantidad">
+                <input type="number" [(ngModel)]="data.cantidad" />
+                <div class="botones">
+                    <button (click)="sumarCantidad()">+</button>
+                    <button (click)="restarCantidad()">-</button>
+                </div>
+                
+            </div>
+        </div>
+
+</div>

@@ -1,0 +1,21 @@
+.content{
+    width: auto;
+    height: 100%;
+}
+.sub_content {
+    display: flex;
+    align-items: center;    
+}
+.sub_content i{
+    margin: 0 5%;
+    padding: 0 5%;
+}
+.sub_content label{
+    margin: 0 5px;
+}
+@media (max-width: 950px) {
+
+    .sub_content {
+        justify-content: space-between;    
+    }
+}

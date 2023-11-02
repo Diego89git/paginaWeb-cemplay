@@ -1,0 +1,281 @@
+.content{
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 105;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 40%;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+.cab-card{
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    font-size: 25px;
+    height: 15%;
+    margin: 10px 25px;
+    border-bottom: 1px solid var(--color-menu);
+    color: var(--color-menu);
+    transition: font-size 5s;
+}
+.cab-card span:hover{
+    cursor: pointer;
+    font-size: 30px;
+}
+.body-card{
+    display: flex;
+    gap: 25px;
+    height: calc(75% - 50px);
+    margin: 15px 25px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-menu);
+    justify-content: center;
+    align-items: center;
+}
+.card_3{
+    width: calc(25% - 50px);
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+.card-1_3 img{
+    width: 50%;
+}
+.card-1_3{
+    width: 30%;
+}
+.card-2_3{
+    width: 50%;
+    font-size: 23px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.card-3_3{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.card-3_3 .precio{
+    color: var(--color-menu);
+}
+.ctrl-cantidad{
+    display: flex;
+    margin: 5px 30px;
+    
+}
+.ctrl-cantidad input{
+    width: 70%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: right;
+    
+}
+.ctrl-cantidad .botones{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.pie-card{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 150px;
+ height: 9%;
+ margin-bottom: 5px;
+}
+.pie-card button{
+    width: 150px;
+    height: 38px;
+    border-radius: 5px;
+    background-color: var(--color-menu);
+    color: white;
+    border: none;
+    padding: 5px;
+    
+}
+.pie-card button:hover{
+    background-color: white;
+    color: var(--color-menu);
+    border: 1px solid var(--color-menu);
+    cursor: pointer;
+    
+}
+@media (max-width: 950px) {
+
+    .content{
+        position: relative;
+        display: block;
+        z-index: 105;
+        width: 85%;
+        height: 85%;
+    }
+    .cab-card{
+      
+        justify-content: space-around;
+        align-items: center;
+        gap: 1px;
+        font-size: 25px;
+        height: 20%;
+        margin: 5px 5px;
+    }
+    
+    .body-card{
+        margin: 0;
+        padding: 0;
+        height: 60%;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    .pie-card{
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+        width: auto;
+        padding-top: 20px;
+
+       }
+   
+    .card-3{
+        width: 100%;
+    }
+    .card-1_3 img{
+        width: 50%;
+        height: 50%;
+    }
+    .card-1_3{
+        width: 50%;
+        height: 50%;
+    }
+    .card-2_3{
+        width: 100%;
+        height: 20%;
+    }
+    .card-3_3{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .card-3_3 .precio{
+        color: var(--color-menu);
+    }
+    .ctrl-cantidad{
+        display: flex;
+        margin: 5px 30px;
+        
+    }
+    .ctrl-cantidad input{
+        width: 70%;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: right;
+        
+    }
+    .ctrl-cantidad .botones{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    
+    }
+}
+@media (max-width: 345px) {
+
+    .content{
+        position: relative;
+        display: block;
+       
+        top: 30%;
+        left: 30%;
+        z-index: 105;
+        transform: translate(-25%, -25%);
+        width: 85%;
+        height: 85%;
+    }
+    .cab-card{
+      
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+        font-size: 25px;
+        height: 20%;
+        margin: 5px 5px;
+    }
+    
+    .body-card{
+        margin: 0;
+        padding: 0;
+        height: 55%;
+        text-align: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 20px;
+        width: 100%;
+    }
+    .pie-card{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+        padding-top: 20px;
+
+       }
+   
+    .card-3{
+        width: 100%;
+    }
+    .card-1_3 img{
+        width: 65%;
+        height: 70%;
+    }
+    .card-1_3{
+        width: 65%;
+        height: 70%;
+    }
+    .card-2_3{
+        width: 100%;
+        height: 20%;
+    }
+    .card-3_3{
+        width: 100%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .card-3_3 .precio{
+        color: var(--color-menu);
+    }
+    .ctrl-cantidad{
+        display: flex;
+        margin: 5px 30px;
+        
+    }
+    .ctrl-cantidad input{
+        width: 70%;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: right;
+        
+    }
+    .ctrl-cantidad .botones{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    
+    }
+}

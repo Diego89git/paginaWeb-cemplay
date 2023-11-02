@@ -1,0 +1,18 @@
+<div class="content">
+  <ul class="lista">
+    <li class="item" *ngFor="let row of listaMenu" [ngClass]="{'seleccionado': row.Seleccionado}"
+      (click)="seleccionarItem(row)">
+      <app-menuitem [data]="row" (onClick)="abrirMenu($event)"></app-menuitem>
+    </li>
+  </ul>
+  <ng-container *ngIf="mostrarCategoria">
+    <ng-container *ngTemplateOutlet="miNgTemplate"></ng-container>
+  </ng-container>
+
+  <ng-template #miNgTemplate>
+    <div class="contenedor" [ngClass]="{'mostrar-categoria': mostrarCategoria}" (click)="ocultarCategoria()">
+      <app-categorias [data]="listaCategorias" (onClick)="abrirCategoria($event)"></app-categorias>
+    </div>
+  </ng-template>
+
+</div>

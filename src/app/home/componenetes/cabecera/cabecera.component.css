@@ -1,0 +1,29 @@
+.content-home-cab{
+    background-color:var(--color-cabecera);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.info{
+    
+    font-size: 15px;
+    margin: 0 20px;
+
+}
+.info h2{
+    font-size: 12px;
+    text-align: center;
+}
+.separador{
+    background-color: #fff;
+    height: 1px;
+    width: 100%;
+    color: white;
+
+}

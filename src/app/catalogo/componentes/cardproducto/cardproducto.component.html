@@ -1,0 +1,15 @@
+<div class="content">
+    <div class="imagen">
+        <img src="{{data.RutaImagen}}" alt="">
+    </div>
+    <div class="detalle">
+        <p>{{data.Descripcion}}</p>
+    </div>
+    <div class="precio">
+        <h1>{{data.Precio_2 | number:'1.2-2' }}</h1>
+    </div>
+    <div class="compra">
+        <i class="fa-solid fa-cart-shopping icono"></i>
+        <button (click)="comprar(data)">COMPRAR</button>
+    </div>
+</div>

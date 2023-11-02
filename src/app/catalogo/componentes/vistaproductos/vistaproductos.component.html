@@ -1,0 +1,30 @@
+<div class="content" >
+
+    <div class="filtro_1">
+        <form [formGroup]="contactForm" (ngSubmit)="submit()">
+            <p>
+                <select formControlName="country">
+                    <option [ngValue]="null" disabled>Selecciona un orden</option>
+                    <option *ngFor="let country of countries" [ngValue]="country.id">{{country.name}}</option>
+                </select>
+            </p>
+        </form>
+    </div>
+    <div class="filtro_2">
+    <h3>MARCAS:</h3>
+        <ul>
+            <li>
+                TODAS
+            </li>
+            <li>
+                OTRAS..
+            </li>
+        </ul>
+    </div>
+    <div class="productos">
+            <app-cardproducto *ngFor="let row of data" [data]="row" class="producto" (onClick)="comprar($event)"></app-cardproducto>
+        
+        
+    </div>
+    <div class="overlay" [ngClass]="{'oculto': !valorMostrarCategoria}"></div>
+</div>

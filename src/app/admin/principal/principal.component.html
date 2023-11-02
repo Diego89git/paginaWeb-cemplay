@@ -1,0 +1,22 @@
+<div class="content">
+    <div class="cabecera">
+        <app-cabecera ></app-cabecera>
+    </div>
+<div class="contenido">
+    <div class="menu open" [ngClass]="{'contraer':contraerSelected}">
+        <app-cont-menu (onClick)="contraer($event)" ></app-cont-menu> 
+    </div>
+    <div class="vistas">
+       
+        <app-contenido></app-contenido>
+    </div>
+
+    
+</div >    
+      <div class="pie">
+        <app-pie></app-pie>
+      </div> 
+    
+    
+
+</div>

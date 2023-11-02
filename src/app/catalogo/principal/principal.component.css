@@ -1,0 +1,20 @@
+.contenedor{
+ width: 100vw;
+ height: 25vh;
+}
+.cab{
+    margin-top: 0;
+    position: relative;
+    grid-template: none;
+    background-color: red;
+    z-index: 2;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8); /* Ajusta el valor alpha para la opacidad deseada */
+    z-index: 999; /* Debe estar por encima del contenido pero detrás del modal */
+  }

@@ -1,0 +1,14 @@
+.content-home-p{   
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cab-p{
+    height: 8%;
+}
+.body-p{
+    flex: 1;
+    margin: 5px;
+}

@@ -1,0 +1,15 @@
+.content {
+
+    align-items: center;
+    justify-content: center;
+    color: black;
+    text-align: center;
+    display: block;
+}
+.img{
+    width: 100%;
+}
+.foto{
+    width: 100px;
+    height: 100px;
+}

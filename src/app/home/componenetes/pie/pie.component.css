@@ -1,0 +1,30 @@
+.content{
+    color: white;
+    background-color: var(--color-menu);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.info{
+    width: 35%;
+    text-align: start;
+    font-size: 20px;
+}
+
+.logo{
+    text-align: center;
+    width: 30%;
+    font-size: 20px;
+}
+
+.iconos{
+    text-align: end;
+    width: 35%;
+}
+
+.icon{
+    font-size: 20px;
+    margin: 5px 15px;
+}

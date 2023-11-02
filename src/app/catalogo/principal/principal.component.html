@@ -1,0 +1,17 @@
+<div class="contenedor" >
+    <div class="cab">
+        <app-cabecera></app-cabecera>
+        <app-menu (valorMostrarCategoria)="ocultarVentanas($event)" (onClick)="abrirCategoria($event)"></app-menu>
+    </div>
+    <div class="contenido">
+        <app-vistaproductos [valorMostrarCategoria]="menuVisible" [data]="listaProductos" (onClick)="comprar($event)"></app-vistaproductos>
+    </div>
+    <div *ngIf="addProductoVisible" class="overlay">
+        <app-addproducto [data]="productoSeleccionado" (cerrar)="cerrarAddCompra()"></app-addproducto>
+    </div>
+    <div class="pie">
+
+    </div>
+
+
+</div>
