@@ -1,27 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
 
-*{
-    margin: 0;
-    padding: 0;
-}
-:root{
+
+:root {
     --color-cabecera: #3498db;
     --color-menu: #1d4675;
     --color-whatsapp: #25D366;
-    --color-facebook:#3b5998;
+    --color-facebook: #3b5998;
 }
 
-body{
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #ffffff;
+    overflow-x: hidden;
     margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #ffffff;
-  overflow-x: hidden; 
+    padding: 0;
 
 }
-.btn-new-reg{
+
+.btn-new-reg {
     color: white;
     background-color: var(--color-cabecera);
     border: none;
@@ -32,8 +31,80 @@ body{
     box-shadow: rgb(39, 38, 38) 3px 3px 3px 1px;
     cursor: pointer;
 }
-.btn-new-reg:hover{
+
+.btn-new-reg:hover {
     color: var(--color-cabecera);
     background-color: white;
     border: 1px solid var(--color-cabecera);
+}
+
+.padd-lef-3 {
+    padding-left: 3px;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem !important;
+}
+
+.gap-2 {
+    gap: 0.5rem !important;
+}
+
+.p-toolbar {
+    padding: 1.25rem;
+    gap: 0.5rem;
+}
+
+.p-datatable .p-datatable-header {
+    padding: 1rem 1rem;
+
+}
+
+.p-input-icon-left>i,
+.p-input-icon-left>.p-icon-wrapper,
+.p-input-icon-right>i,
+.p-input-icon-right>.p-icon-wrapper {
+
+    margin-top: -0.5rem;
+}
+
+.p-input-icon-left>.p-inputtext {
+    padding-left: 2.5rem;
+}
+
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-between {
+    justify-content: space-between !important;
+}
+
+.flex {
+    display: flex !important;
+    margin: 5px;
+}
+
+.btns-options {
+    display: flex;
+}
+
+.opciones {
+    display: flex;
+}
+
+.field {
+    margin: 5px;
+    padding: 8px 5px;
+}
+
+::ng-deep .p-dropdown-panel {
+    z-index: 1000;
+    /* Ajusta el valor según sea necesario */
+    min-height: 200px;
+    /* Ajusta la altura máxima según sea necesario */
+    overflow-y: auto;
+    /* Habilita el desplazamiento vertical si hay demasiados elementos */
+    pointer-events: auto !important;
+    font-size: 14px;
 }

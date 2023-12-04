@@ -16,6 +16,7 @@ export class PrincipalComponent {
   listaProductosVacia: any[] = [
     { RutaImagen: './assets/imagenes/categorias/stockagotado.png', Descripcion: 'Stock Agotado', Id: '999' }
   ]
+  vistaPrincipal=true
   constructor(private menuService: MenuService,
               private productoService: ProductoService,
               private carritoService: CarritoService) {}
@@ -36,6 +37,7 @@ export class PrincipalComponent {
   abrirCategoria(row:any){
     this.llenarVistaProductosByIdCategoria(row.Id)
     this.handleClickFueraDelMenu()
+    this.vistaPrincipal=false
   }
   llenarVistaProductosByIdCategoria(id:number){
     this.productoService.getDataByIdCategoria(id).subscribe(data=>{
@@ -45,6 +47,7 @@ export class PrincipalComponent {
         this.listaProductos=this.listaProductosVacia
         
       }
+      this.vistaPrincipal=false
     })
     
   }
@@ -55,5 +58,8 @@ export class PrincipalComponent {
   
   cerrarAddCompra(){
     this.addProductoVisible=false
+  }
+  home(){
+    this.vistaPrincipal=true
   }
 }

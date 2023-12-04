@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CarritoService } from 'src/app/AUX/Services/carrito.service';
 
 @Component({
@@ -8,7 +8,12 @@ import { CarritoService } from 'src/app/AUX/Services/carrito.service';
 })
 export class CardcarritoComponent {
   datosCarrito :any
+  @Output() onClickActualizaCarrito:EventEmitter<any> = new EventEmitter<any>()
+  
   constructor(  private carritoService: CarritoService){
     this.datosCarrito= this.carritoService.obtenerProductosEnCarrito() 
+  }
+  actualizaCarrito(){
+    this.onClickActualizaCarrito.emit()
   }
 }

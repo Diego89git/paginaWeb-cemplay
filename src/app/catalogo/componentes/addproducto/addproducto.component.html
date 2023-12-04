@@ -4,6 +4,7 @@
         <p>Cantidad a comprar del producto seleccionado</p>
         <span (click)="cerrarModal()"><i class="fa-solid fa-rectangle-xmark"></i></span>
     </div>
+    <p-divider></p-divider>
     <div class="body-card">
         <div class="card_3 card-1_3">
             <img src="{{data.RutaImagen}}" alt="">
@@ -13,19 +14,16 @@
         </div>
         <div class="card_3 card-3_3">
             <div class="precio">
-                <h1>{{data.Precio_2 | number:'1.2-2' }}</h1>
+                <h1>${{data.Precio_3 | number:'1.2-2' }}</h1>
             </div>
             <div class="ctrl-cantidad">
-                <input type="number" [(ngModel)]="cantidadComprar" />
-                <div class="botones">
-                    <button (click)="sumarCantidad()">+</button>
-                    <button (click)="restarCantidad()">-</button>
-                </div>
-                
+                <button (click)="restarCantidad()">-</button>
+                <input type="number" [(ngModel)]="cantidadComprar" />           
+                <button (click)="sumarCantidad()">+</button>
             </div>
         </div>
-
     </div>
+    <p-divider></p-divider>
     <div class="pie-card">
         <button (click)="seguirComprando()">Aceptar y Seguir Comprando</button>
         <button (click)="irAlCarro()">Aceptar e ir al Carro de Compras</button>

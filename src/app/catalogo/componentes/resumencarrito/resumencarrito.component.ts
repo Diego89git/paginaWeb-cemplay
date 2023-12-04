@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-resumencarrito',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./resumencarrito.component.css']
 })
 export class ResumencarritoComponent {
+@Input() subtotal?:number
+@Input() impuesto?:number
+@Input() total?:number
+
 
 }

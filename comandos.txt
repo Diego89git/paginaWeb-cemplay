@@ -1,0 +1,2 @@
+ng g c catalogo\principal\componentes-principal\carousel-principal
+ng build --configuration=production

@@ -15,8 +15,9 @@
     text-align: right;
     font-size: 25px;
 }
-.logo .img{
+.logo img{
     margin: 0 10px;
+    width: 100px;
 }
 .items{
     flex: 1;

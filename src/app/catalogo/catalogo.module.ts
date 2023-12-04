@@ -18,6 +18,30 @@ import { CarritoComponent } from './componentes/carrito/carrito.component';
 import { CardcarritoComponent } from './componentes/cardcarrito/cardcarrito.component';
 import { ProductocarritoComponent } from './componentes/productocarrito/productocarrito.component';
 import { ResumencarritoComponent } from './componentes/resumencarrito/resumencarrito.component';
+import { CarouselPrincipalComponent } from './principal/componentes-principal/carousel-principal/carousel-principal.component';
+
+import { CarouselModule } from 'primeng/carousel';
+import { TagModule } from 'primeng/tag';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { RippleModule } from 'primeng/ripple';
+import { FileUploadModule } from 'primeng/fileupload';
+import { TableModule } from 'primeng/table';
+import { InputTextModule } from 'primeng/inputtext';
+import { DialogModule } from 'primeng/dialog';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { DropdownModule } from 'primeng/dropdown';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { RatingModule } from 'primeng/rating';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from 'primeng/api';
+import { ListboxModule } from 'primeng/listbox';
+import { DividerModule } from 'primeng/divider';
+
 
 
 
@@ -35,7 +59,8 @@ import { ResumencarritoComponent } from './componentes/resumencarrito/resumencar
     CarritoComponent,
     CardcarritoComponent,
     ProductocarritoComponent,
-    ResumencarritoComponent
+    ResumencarritoComponent,
+    CarouselPrincipalComponent
     
   ],
   imports: [
@@ -44,7 +69,28 @@ import { ResumencarritoComponent } from './componentes/resumencarrito/resumencar
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CarouselModule,
+    TagModule,
+    ButtonModule,
+    CardModule,
+    ToastModule,
+    ToolbarModule,
+    RippleModule,
+    FileUploadModule,
+    TableModule,
+    InputTextModule,
+    DialogModule,
+    InputTextareaModule,
+    DropdownModule,
+    RadioButtonModule,
+    InputNumberModule,
+    ConfirmDialogModule,
+    RatingModule,
+    BrowserAnimationsModule,
+    SharedModule,
+    ListboxModule,
+    DividerModule
   ],
   exports: [
     PrincipalComponent,
@@ -59,7 +105,8 @@ import { ResumencarritoComponent } from './componentes/resumencarrito/resumencar
     CarritoComponent,
     CardcarritoComponent,
     ProductocarritoComponent,
-    ResumencarritoComponent
+    ResumencarritoComponent,
+    CarouselPrincipalComponent
   ]
 })
 export class CatalogoModule { }

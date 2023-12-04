@@ -2,9 +2,10 @@
     margin: 0 0;
     background-color: var(--color-cabecera);
     display: flex;
-    height: 70px;
+    height: 100%;
     align-items: center;
     color: white;
+    padding: 15px;
 }
 
 .logo {
@@ -54,11 +55,15 @@
 }
 
 .iconos {
+    display: flex;
     margin: 0 25px;
     width: 20%;
     text-align: right;
     font-size: 20px;
-
+    align-items: center;
+    gap: 25px;
+    margin-left: 125px;
+    justify-content: space-evenly;
 }
 
 .iconos .icono {

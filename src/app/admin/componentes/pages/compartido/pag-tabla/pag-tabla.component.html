@@ -4,7 +4,7 @@
     <p-toolbar styleClass="mb-4 gap-2">
         <ng-template pTemplate="left">
             <button pButton pRipple label="New" icon="pi pi-plus" class="p-button-success mr-2" (click)="openNew()"></button>
-            <button pButton pRipple  icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
+            <button pButton pRipple label="Delete" icon="pi pi-trash" class="p-button-danger" (click)="deleteSelectedProducts()" [disabled]="!selectedProducts || !selectedProducts.length"></button>
         </ng-template>
 
         <ng-template pTemplate="right">
@@ -16,22 +16,22 @@
     <p-table
         #dt
         [value]="products"
-        [rows]="5"
+        [rows]="6"
         [paginator]="true"
-        [globalFilterFields]="['name', 'country.name', 'representative.name', 'status']"
+        [globalFilterFields]="['Descripcion', 'country.name', 'representative.name', 'status']"
         [tableStyle]="{ 'min-width': '25rem' }"
         [(selection)]="selectedProducts"
         [rowHover]="true"
-        dataKey="id"
+        dataKey="Id"
         currentPageReportTemplate="Viendo del {first} a {last} de {totalRecords} registros"
         [showCurrentPageReport]="true"
     >
         <ng-template pTemplate="caption">
             <div class="flex align-items-center justify-content-between">
-                <h5 class="m-0">Busqueda de productos</h5>
+                <h5 class="m-0">Busqueda de registros</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($event.target, 'contains')" placeholder="Search..." />
+                    <input pInputText type="text" #textoBucar (input)="dt.filterGlobal(textoBucar.value, 'contains')" placeholder="Search..." />
                 </span>
             </div>
         </ng-template>
@@ -40,10 +40,10 @@
                 <th style="width: 4rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
-                <th pSortableColumn="name" style="min-width:15rem">Name <p-sortIcon field="name"></p-sortIcon></th>
-                <th>Image</th>
-                <th pSortableColumn="price">Price <p-sortIcon field="price"></p-sortIcon></th>
-                <th pSortableColumn="category" style="min-width:10rem">Category <p-sortIcon field="category"></p-sortIcon></th>
+                <th pSortableColumn="Descripcion" style="min-width:15rem">Descripción <p-sortIcon field="Descripcion"></p-sortIcon></th>
+                <th>Imagen</th>
+                <th pSortableColumn="price">Precio <p-sortIcon field="price"></p-sortIcon></th>
+                <th pSortableColumn="category" style="min-width:10rem">Categoria <p-sortIcon field="category"></p-sortIcon></th>
                 <th></th>
             </tr>
         </ng-template>
@@ -69,47 +69,32 @@
 </div>
 <p-dialog [(visible)]="productDialog" [style]="{ width: '450px' }" header="Product Details" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
-        <img [src]="'https://primefaces.org/cdn/primeng/images/demo/product/' + product.image" [alt]="product.image" class="block m-auto pb-3" *ngIf="product.image" />
+        <img [src]="product.RutaImagen" [alt]="product.image" class="block m-auto pb-3" *ngIf="product.RutaImagen" />
         <div class="field">
-            <label for="name">Name</label>
-            <input type="text" pInputText id="name" [(ngModel)]="product.name" required autofocus />
-            <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small>
-        </div>
-        <div class="field">
-            <label for="description">Description</label>
-            <textarea id="description" pInputTextarea [(ngModel)]="product.description" required rows="3" cols="20"></textarea>
+            <label for="descripcion">Descripcion</label>
+            <input type="text" pInputText id="descripcion" [(ngModel)]="product.Descripcion" required autofocus />
+            <small class="p-error" *ngIf="submitted && !product.Descripcion">Descripcion es requerida.</small>
         </div>
 
         <div class="field">
-            <label class="mb-3">Category</label>
+            <label class="mb-3">Categoria</label>
             <div class="formgrid grid">
                 <div class="field-radiobutton col-6">
-                    <p-radioButton id="category1" name="category" value="Accessories" [(ngModel)]="product.category"></p-radioButton>
+                    <p-radioButton id="categoria" name="categoria" value="Accessories" [(ngModel)]="product.IdCategoria"></p-radioButton>
                     <label for="category1">Accessories</label>
                 </div>
-                <div class="field-radiobutton col-6">
-                    <p-radioButton id="category2" name="category" value="Clothing" [(ngModel)]="product.category"></p-radioButton>
-                    <label for="category2">Clothing</label>
-                </div>
-                <div class="field-radiobutton col-6">
-                    <p-radioButton id="category3" name="category" value="Electronics" [(ngModel)]="product.category"></p-radioButton>
-                    <label for="category3">Electronics</label>
-                </div>
-                <div class="field-radiobutton col-6">
-                    <p-radioButton id="category4" name="category" value="Fitness" [(ngModel)]="product.category"></p-radioButton>
-                    <label for="category4">Fitness</label>
-                </div>
+               
             </div>
         </div>
 
         <div class="formgrid grid">
             <div class="field col">
                 <label for="price">Price</label>
-                <p-inputNumber id="price" [(ngModel)]="product.price" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
+                <p-inputNumber id="price" [(ngModel)]="product.Precio_2" mode="currency" currency="USD" locale="en-US"></p-inputNumber>
             </div>
             <div class="field col">
-                <label for="quantity">Quantity</label>
-                <p-inputNumber id="quantity" [(ngModel)]="product.quantity"></p-inputNumber>
+                <label for="quantity">Stock</label>
+                <p-inputNumber id="quantity" [(ngModel)]="product.Stock"></p-inputNumber>
             </div>
         </div>
     </ng-template>

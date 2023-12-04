@@ -1,10 +1,11 @@
 <div class="contenedor" >
     <div class="cab">
-        <app-cabecera></app-cabecera>
+        <app-cabecera (onClickHome)="home()"></app-cabecera>
         <app-menu (valorMostrarCategoria)="ocultarVentanas($event)" (onClick)="abrirCategoria($event)"></app-menu>
     </div>
     <div class="contenido">
-        <app-vistaproductos [valorMostrarCategoria]="menuVisible" [data]="listaProductos" (onClick)="comprar($event)"></app-vistaproductos>
+        <app-carousel-principal *ngIf="vistaPrincipal" (onClickCat)="abrirCategoria($event)" (onClickPrd)="comprar($event)"></app-carousel-principal>
+        <app-vistaproductos *ngIf="!vistaPrincipal" [valorMostrarCategoria]="menuVisible" [data]="listaProductos" (onClick)="comprar($event)"></app-vistaproductos>
     </div>
     <div *ngIf="addProductoVisible" class="overlay">
         <app-addproducto [data]="productoSeleccionado" (cerrar)="cerrarAddCompra()"></app-addproducto>
@@ -14,4 +15,12 @@
     </div>
 
 
+</div>
+<div class="btn-social">
+    <a class="btn-whatsapp" href="https://api.whatsapp.com/send/?phone=593968170965" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-square-whatsapp"></i>
+    </a>
+    <a class="btn-facebook" href="https://www.facebook.com/cemplaysoluciones" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-square-facebook"></i>
+    </a>
 </div>

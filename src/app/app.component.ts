@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarritoService } from './AUX/Services/carrito.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'store_app';
+  constructor(private carritoService: CarritoService){
+   
+  }
+  ngOnInit(){
+    this.carritoService.inicializarCarritoDesdeLocalStorage()
+  }
 }

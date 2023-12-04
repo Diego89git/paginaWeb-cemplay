@@ -1,8 +1,13 @@
 <div class="content">
     <app-cabecera></app-cabecera>
     <div class="carro-detalle"> 
-        <app-cardcarrito class="card"></app-cardcarrito>
-        <app-resumencarrito></app-resumencarrito>
+        <app-cardcarrito (onClickActualizaCarrito)="actualizaCarrito()" class="card-listaProductos"></app-cardcarrito>
+        <app-resumencarrito
+         [subtotal]="subtotal" 
+         [impuesto]="impuesto" 
+         [total]="total" 
+         class="card-resumen">
+        </app-resumencarrito>
     </div>
    
 </div>

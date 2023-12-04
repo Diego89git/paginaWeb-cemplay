@@ -1,0 +1,29 @@
+<p-dialog 
+[(visible)]="dataDialog" 
+[style]="{ width: '450px' }" 
+header="Detalle de Registro" 
+[modal]="true"
+    styleClass="p-fluid" (onHide)="hideDialog()">
+    <ng-template pTemplate="content">
+
+        <div class="field">
+            <label for="titulo">Titulo</label>
+            <input type="text" pInputText id="titulo" [(ngModel)]="data.Titulo" required autofocus />
+            <small class="p-error" *ngIf="submitted && !data.Titulo">Titulo es requerido.</small>
+        </div>
+        <div class="field">
+            <label for="icono">Icono (fa......)</label>
+            <input id="icono" pInputText [(ngModel)]="data.Icono" required autofocus />
+            <small class="p-error" *ngIf="submitted && !data.Icono">Icono es requerido.</small>
+        </div>
+        <div class="field center">
+            <i class="{{data.Icono}}" class="block m-auto pb-3" *ngIf="data.Icono"></i>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
+            (click)="hideDialog()"></button>
+        <button pButton pRipple label="Guardar" icon="pi pi-check" class="p-button-text"
+            (click)="saveProduct()"></button>
+    </ng-template>
+</p-dialog>

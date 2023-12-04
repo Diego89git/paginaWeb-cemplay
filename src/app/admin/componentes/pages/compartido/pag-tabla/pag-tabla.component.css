@@ -1,4 +1,15 @@
 .card{
-    margin: 10px;
+    margin: 5px;
     z-index: -1;
+    padding: 1rem;
 }
+
+p-toolbar button{
+    padding: 5px;
+    margin: 5px;
+    width: 100px;
+}
+
+
+
+

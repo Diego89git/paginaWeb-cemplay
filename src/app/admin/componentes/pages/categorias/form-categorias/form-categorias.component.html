@@ -1,0 +1,57 @@
+<p-dialog 
+    [(visible)]="dataDialog" 
+    header="Detalle de Registro" 
+    [modal]="true"
+    [style]="{ width: '700px', height: '600px' }"
+    (onShow)="showDialog()"
+    (onHide)="hideDialog()">
+    <ng-template pTemplate="content" >
+        <div class="formulario">
+            <div class="seccion">
+                <div class="field">
+                    <label for="titulo">Nombre</label>
+                    <input type="text" pInputText id="titulo" [(ngModel)]="data.Nombre" required autofocus />
+                    <small class="p-error" *ngIf="submitted && !data?.Nombre">Nombre es requerido.</small>
+                </div>        
+                <div class="field">
+                    <label for="grupo">Grupo</label>
+                    <form [formGroup]="formGroup">
+                        <p-dropdown id="grupo" formControlName="IdGrupo" [options]="grupos" [(ngModel)]="selectedGrupo" optionLabel="Titulo" [showClear]="false" placeholder="Selecciona un grupo" >
+                            <ng-template pTemplate="selectedItem">
+                                <div  *ngIf="selectedGrupo">                        
+                                    <div>{{ selectedGrupo.Titulo }}</div>
+                                </div>
+                            </ng-template>
+                            <ng-template let-grupo pTemplate="item">
+                                <div >                        
+                                    <div>{{ grupo.Titulo }}</div>
+                                </div>
+                            </ng-template>
+                        </p-dropdown>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="field">
+                <label for="tipo">Tipo</label>
+                <textarea id="tipo" pInputText [(ngModel)]="data.Tipo"  required autofocus ></textarea>
+                <small class="p-error" *ngIf="submitted && !data?.Tipo">Tipo es requerido.</small>
+            </div>
+            <div class="field">
+                <div class="p-inputgroup">
+                    <label for="archivo">Importar/Actualizar Imagen</label>
+                    <input  (change)="onFileUpload($event)"  id="archivo" type="file" name="" >
+                </div>
+                
+            </div>
+            <div  class="imagen" *ngIf="previsualizacion" >
+                <img width="100px" [src]="previsualizacion" alt="">
+            </div>
+        </div>
+        
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
+        <button pButton pRipple label="Guardar" icon="pi pi-check" class="p-button-text" (click)="saveProduct()"></button>
+    </ng-template>
+</p-dialog>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CarritoService } from 'src/app/AUX/Services/carrito.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { CarritoService } from 'src/app/AUX/Services/carrito.service';
 
 export class ProductocarritoComponent {
   @Input() data:any
+  @Output() onClickActualizaCarrito:EventEmitter<any>= new EventEmitter<any>()
   cantidadComprar=0
 
   constructor(  private carritoService: CarritoService){
@@ -18,15 +19,23 @@ export class ProductocarritoComponent {
 
   sumarCantidad() {
     console.log(this.data)
-    this.cantidadComprar++;
+    this.data.cantidad++;
+    this.carritoService.agregarProductoAlCarrito(this.data, this.data.cantidad)
+    this.onClickActualizaCarrito.emit()
   }
   restarCantidad() {
-    if (this.cantidadComprar > 1) {
-      this.cantidadComprar--;
+    if (this.data.cantidad > 1) {
+      this.data.cantidad--;
+      this.carritoService.agregarProductoAlCarrito(this.data, this.data.cantidad)
+      this.onClickActualizaCarrito.emit()
     }
   }
 
   obtenerProductosCarrito(){
     return this.carritoService.obtenerProductosEnCarrito()
+  }
+  quitarDeCarrito(row:any){
+    this.carritoService.eliminarProductoDeCarrito(row)
+    this.onClickActualizaCarrito.emit()
   }
 }

@@ -29,9 +29,20 @@ import { TagModule } from 'primeng/tag';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RatingModule } from 'primeng/rating';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CardModule } from 'primeng/card';
+import { SharedModule } from 'primeng/api';
+import { TablaGruposComponent } from './componentes/pages/grupos/tabla-grupos/tabla-grupos.component';
+import { FileSaverOptions } from 'file-saver';
+import { FormGruposComponent } from './componentes/pages/grupos/form-grupos/form-grupos.component';
+import { FormCategoriasComponent } from './componentes/pages/categorias/form-categorias/form-categorias.component';
+import { TablaCategoriasComponent } from './componentes/pages/categorias/tabla-categorias/tabla-categorias.component';
+import { ListboxModule } from 'primeng/listbox';
+import { TablaProductosComponent } from './componentes/pages/productos/tabla-productos/tabla-productos.component';
+import { FormProductosComponent } from './componentes/pages/productos/form-productos/form-productos.component';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -46,7 +57,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PagTablaComponent,
     PagGruposComponent,
     PagCabeceraComponent,
-    PagPieComponent
+    PagPieComponent,
+    TablaGruposComponent,
+    FormGruposComponent,
+    FormCategoriasComponent,
+    TablaCategoriasComponent,
+    TablaProductosComponent,
+    FormProductosComponent
   ],
   imports: [
     CommonModule,
@@ -67,7 +84,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ConfirmDialogModule,
     RatingModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CardModule,
+    TagModule,
+    SharedModule,
+    ReactiveFormsModule,
+    ListboxModule,
+    DividerModule
+    
   ],
   exports: [
     PrincipalComponent,
@@ -81,7 +105,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PagTablaComponent,
     PagGruposComponent,
     PagCabeceraComponent,
-    PagPieComponent
+    PagPieComponent,
+    TablaGruposComponent,
+    FormGruposComponent,
+    FormCategoriasComponent,
+    TablaCategoriasComponent,
+    TablaProductosComponent,
+    FormProductosComponent
   ]
 })
 export class AdminModule { }

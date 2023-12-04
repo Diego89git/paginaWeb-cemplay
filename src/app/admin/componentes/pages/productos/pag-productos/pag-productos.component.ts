@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./pag-productos.component.css']
 })
 export class PagProductosComponent {
-  data:any={icono:'',titulo:'Gestión de Categorias'}
+  data:any={icono:'',titulo:'Gestión de Productos'}
 }

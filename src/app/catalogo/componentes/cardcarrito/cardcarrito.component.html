@@ -1,6 +1,11 @@
 <div class="content">
     <div class="productos" >
-        <app-productocarrito class="producto" *ngFor="let data of datosCarrito" [data]="data"></app-productocarrito>
+        <app-productocarrito 
+        class="producto" 
+        *ngFor="let data of datosCarrito" 
+        [data]="data"
+        (onClickActualizaCarrito)="actualizaCarrito()"
+        ></app-productocarrito>
     </div>    
 </div>
 

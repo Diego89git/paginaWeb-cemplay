@@ -1,25 +1,4 @@
 
-.btn-social{
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    font-size: 50px;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    padding: 2px 10px;
-    border-radius: 10px;
-    box-shadow: black 5px 5px 5px 1px;
-    border: 0.8px solid black;
-    z-index: 1001;
-}
-.btn-whatsapp{
-    color: var(--color-whatsapp);
-    
-}
 
-.btn-facebook{
-    color: var(--color-facebook);
-    
-}
+
 

@@ -1,0 +1,51 @@
+.seccion{
+    display: flex;
+    width: 35%;
+}
+.seccion_center{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.field_1{
+    
+    width: 150px;
+   
+}
+.seccion_dw{
+    display: flex;
+}
+.subseccion-left{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    gap:15px;
+}
+.subseccion-rigth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+input[type="file"]#archivo {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+label[for="archivo"] {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    background-color: #106BA0;
+    display: inline-block;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px 25px !important;
+    text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+}

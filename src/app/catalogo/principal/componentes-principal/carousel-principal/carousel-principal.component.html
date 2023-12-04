@@ -1,0 +1,33 @@
+<div class="card">
+    <h3>CATEGORÍAS MAS VISITADAS</h3>
+    <p-carousel [value]="categorias" [numVisible]="numItems" [numScroll]="numItems" [circular]="true" [responsiveOptions]="responsiveOptions">
+        <ng-template let-categoria pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3" (click)="abrirCategoria(categoria)">
+                <div class="mb-3">
+                    <img src="{{ categoria.RutaLogo }}" width="100px" height="100px" [alt]="categoria.Nombre" class="w-6 shadow-2" />
+                </div>
+                <div class="center">
+                    <h4 class="mb-1">{{ categoria.Nombre }}</h4>
+                    <p-tag [value]="categoria.Grupo" ></p-tag>                   
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
+<div class="card">
+    <h3>PRODUCTOS MÁS COMPRADOS</h3>
+    <p-carousel [value]="productos" [numVisible]="numItems" [numScroll]="numItems" [circular]="true" [responsiveOptions]="responsiveOptions">
+        <ng-template let-producto pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 text-center py-5 px-3" (click)="comprar(producto)">
+                <div class="mb-3">
+                    <img src="{{ producto.RutaImagen }}" width="100px" height="100px" [alt]="producto.Descripcion" class="w-6 shadow-2" />
+                </div>
+                <div class="center">
+                    <h4 class="mb-1">{{ producto.Descripcion }}</h4>
+                    <h6 class="mt-0 mb-3">${{producto.Precio_3| number: '1.2-4'}}</h6>
+                    <p-tag [value]="producto.Categoria" ></p-tag>                   
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>

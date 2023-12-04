@@ -1,0 +1,12 @@
+.content{
+    width: 100%;
+    margin-right: 0px;
+    padding: 25px;
+}
+h3{
+    display: inline;
+}
+p{
+    display: inline;
+    text-align: right;
+}

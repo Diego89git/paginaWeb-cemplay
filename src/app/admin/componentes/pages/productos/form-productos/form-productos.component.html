@@ -1,0 +1,115 @@
+<p-dialog 
+[(visible)]="dataDialog" 
+(onHide)="hideDialog()" 
+[modal]="true" 
+[style]="{width: '680px', height: '600px'}"
+header="Detalles del registro"
+(onShow)="showDialog()">
+    <ng-template pTemplate="content">
+        <div class="field">
+            <label for="descripcion">Descripción</label>
+            <textarea rows="1" cols="55" pInputTextarea id="descripcion" [(ngModel)]="data.Descripcion" type="text"
+                required></textarea>
+            <small class="p-error" *ngIf="submit && !data?.Descripcion">Descripción es requerida.</small>
+        </div>
+        <div class="field">
+            <label for="observacion">Observacion</label>
+            <textarea rows="2" cols="55" pInputTextarea id="observacion" [(ngModel)]="data.Observacion" type="text"
+                ></textarea>
+           
+        </div>
+        <p-divider></p-divider>
+        <div class="seccion">
+            <div class="field">
+                <label for="categoria">Categoría</label>
+                <form [formGroup]="formGroup">
+                    <p-dropdown id="categoria" [options]="categorias" [(ngModel)]="selectedCategoria"
+                        formControlName="IdCategoria" optionLabel="Nombre" placeholder="Seleccina una Categoría..">
+                        <ng-template pTemplate="selectedItem">
+                            <div *ngIf="selectedCategoria">
+                                <div>{{selectedCategoria.Nombre}}</div>
+                            </div>
+
+                        </ng-template>
+                        <ng-template pTemplate="item" let-categoria>
+                            <div>
+                                <div>{{categoria.Nombre}}</div>
+
+                            </div>
+                        </ng-template>
+                    </p-dropdown>
+                </form>
+            </div>
+            <div class="field">
+                <label for="marca">Marca</label>
+                <input pInputText type="text" class="p-inputtext-sm" id="marca" [(ngModel)]="data.Marca" required>
+                <small class="p-error" *ngIf="submit && !data?.Marca">Marca es requerida.</small>
+            </div>            
+        </div>
+        <div class="seccion_center">
+            <div class="field_1">
+                <label for="unidad">Unidad de Medida</label>
+                <input pInputText type="text"  class="p-inputtext-sm" id="unidad" [(ngModel)]="data.Unidad" required>
+                <small class="p-error" *ngIf="submit && !data?.Unidad">Unidad es requerida.</small>
+            </div>
+        </div>
+        
+        <p-divider></p-divider>
+        <div class="seccion">
+
+            <div class="field">
+                <label for="costo">Costo</label>
+                <p-inputNumber id="costo" [(ngModel)]="data.Costo" mode="currency" currency="USD" locale="en-US"
+                    [minFractionDigits]="2" [maxFractionDigits]="4"></p-inputNumber>
+                    <small class="p-error" *ngIf="submit && !data?.Costo">Costo es requerido.</small>
+            </div>
+            <div class="field">
+                <label for="stock">Stock</label>
+                <p-inputNumber id="stock" [(ngModel)]="data.Stock"></p-inputNumber>
+                <small class="p-error" *ngIf="submit && !data?.Stock">Stock es requerido.</small>
+            </div>
+        </div>
+        <p-divider></p-divider>
+        <div class="seccion_dw">
+            <div class="subseccion-left">
+                <div class="field">
+                    <label for="precio1">Precio 1</label>
+                    <p-inputNumber id="precio1" [(ngModel)]="data.Precio_1" mode="currency" currency="USD"
+                        locale="en-US" [minFractionDigits]="2" [maxFractionDigits]="4"></p-inputNumber>
+                        <small class="p-error" *ngIf="submit && !data?.Precio_1">Precio 1 es requerido.</small>
+                </div>
+                <div class="field">
+                    <label for="precio2">Precio 2</label>
+                    <p-inputNumber id="precio2" [(ngModel)]="data.Precio_2" mode="currency" currency="USD"
+                        locale="en-US" [minFractionDigits]="2" [maxFractionDigits]="4"></p-inputNumber>
+                        <small class="p-error" *ngIf="submit && !data?.Precio_2">Precio 2 es requerido.</small>
+                </div>
+                <div class="field">
+                    <label for="precio3">Precio 3</label>
+                    <p-inputNumber id="precio3" [(ngModel)]="data.Precio_3" mode="currency" currency="USD"
+                        locale="en-US" [minFractionDigits]="2" [maxFractionDigits]="4"></p-inputNumber>
+                        <small class="p-error" *ngIf="submit && !data?.Precio_3">Precio 3 es requerido.</small>
+                </div>
+            </div>
+            <div class="subseccion-rigth">
+                <div class="field">
+                    <div class="p-inputgroup">
+                        <label for="archivo">Importar/Actualizar Imagen</label>
+                        <input (change)="onFileUpload($event)" id="archivo" type="file" name="">
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="imagen" *ngIf="previsualizacion">
+                        <img width="250px" height="220px" [src]="previsualizacion" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text"
+            (click)="hideDialog()"></button>
+        <button pButton pRipple label="Guardar" icon="pi pi-check" class="p-button-text"
+            (click)="saveProduct()"></button>
+    </ng-template>
+</p-dialog>

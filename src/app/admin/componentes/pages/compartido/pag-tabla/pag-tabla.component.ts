@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ConfirmationService, MessageService } from 'primeng/api';
+import { ConfirmationService, MessageService, PrimeNGConfig } from 'primeng/api';
 import { ProductoService } from 'src/app/API/services/producto.service';
 
 @Component({
@@ -47,7 +47,7 @@ export class PagTablaComponent {
           header: 'Confirm',
           icon: 'pi pi-exclamation-triangle',
           accept: () => {
-             // this.products = this.products.filter((val) => !this.selectedProducts?.includes(val));
+              this.products = this.products.filter((val) => !this.selectedProducts?.includes(val));
               this.selectedProducts = null;
               this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Products Deleted', life: 3000 });
           }
@@ -65,7 +65,7 @@ export class PagTablaComponent {
           header: 'Confirm',
           icon: 'pi pi-exclamation-triangle',
           accept: () => {
-              //this.products = this.products.filter((val) => val.id !== product.id);
+              this.products = this.products.filter((val) => val.id !== product.id);
               this.product = {};
               this.messageService.add({ severity: 'success', summary: 'Successful', detail: 'Product Deleted', life: 3000 });
           }
